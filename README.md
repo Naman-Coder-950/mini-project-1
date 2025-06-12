@@ -193,3 +193,69 @@ print("\n(iv) Maximum in List 1:", max_list1)
 print("    Maximum in List 2:", max_list2)
 print("\n(v) Sum of List 1:", sum_list1)
 print("    Sum of List 2:", sum_list2)
+
+import random
+
+# Generate a list of 100 random numbers between 100 and 900
+numbers = [random.randint(100, 900) for _ in range(100)]
+
+# (i) Count and print all odd numbers
+odd_numbers = [num for num in numbers if num % 2 != 0]
+print(f"Odd numbers ({len(odd_numbers)}): {odd_numbers}")
+
+# (ii) Count and print all even numbers
+even_numbers = [num for num in numbers if num % 2 == 0]
+print(f"Even numbers ({len(even_numbers)}): {even_numbers}")
+
+# (iii) Count and print all prime numbers
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+prime_numbers = [num for num in numbers if is_prime(num)]
+print(f"Prime numbers ({len(prime_numbers)}): {prime_numbers}")
+
+# Define the dictionary
+D = {1: "One", 2: "Two", 3: "Three", 4: "Four", 5: "Five"}
+
+# Open the file in write mode
+with open("output.txt", "w") as file:
+    # Iterate through the dictionary and write each key-value pair to the file
+    for key, value in D.items():
+        file.write(f"{key}, {value}\n")
+
+print("Dictionary has been written to 'output.txt'")
+
+# Define the list
+L = ["One", "Two", "Three", "Four", "Five"]
+
+# Open the file in write mode
+with open("output.txt", "w") as file:
+    # Iterate through the list and write each element and its length to the file
+    for item in L:
+        file.write(f"{item}, {len(item)}\n")
+
+print("List elements and their lengths have been written to 'output.txt'")
+
+import random
+import string
+
+# Function to generate a random string of a given length
+def generate_random_string(length):
+    characters = string.ascii_letters + string.digits + string.punctuation
+    return ''.join(random.choices(characters, k=length))
+
+# Open the file in write mode
+with open("random_strings.txt", "w") as file:
+    # Generate and write 100 random strings to the file
+    for _ in range(100):
+        length = random.randint(10, 15)  # Random length between 10 and 15
+        random_string = generate_random_string(length)
+        file.write(random_string + "\n")
+
+print("100 random strings have been written to 'random_strings.txt'")
+
