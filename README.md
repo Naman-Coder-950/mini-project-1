@@ -132,3 +132,29 @@ print("Intersection of S1 and S2:", intersection_set)
 difference_set = S1.difference(S2)
 print("Difference S1 - S2:", difference_set)
 
+import random
+import string
+
+# Function to generate a random string of a given length
+def generate_random_string(length):
+    characters = string.ascii_letters + string.digits
+    return ''.join(random.choices(characters, k=length))
+
+# Generate and print 100 random strings with lengths between 6 and 8
+for _ in range(100):
+    length = random.randint(6, 8)
+    print(generate_random_string(length))
+    # Function to check if a number is prime
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+# Print all prime numbers between 600 and 800
+for num in range(600, 801):
+    if is_prime(num):
+        print(num)
+
