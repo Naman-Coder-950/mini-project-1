@@ -158,3 +158,38 @@ for num in range(600, 801):
     if is_prime(num):
         print(num)
 
+import random
+
+# Generate two lists of 10 random numbers between 10 and 30
+list1 = [random.randint(10, 30) for _ in range(10)]
+list2 = [random.randint(10, 30) for _ in range(10)]
+
+# (i) Common numbers in both lists
+common_numbers = list(set(list1) & set(list2))
+
+# (ii) Unique numbers in both lists
+unique_numbers = list(set(list1) ^ set(list2))
+
+# (iii) Minimum in both lists
+min_list1 = min(list1)
+min_list2 = min(list2)
+
+# (iv) Maximum in both lists
+max_list1 = max(list1)
+max_list2 = max(list2)
+
+# (v) Sum of both lists
+sum_list1 = sum(list1)
+sum_list2 = sum(list2)
+
+# Display results
+print("List 1:", list1)
+print("List 2:", list2)
+print("\n(i) Common numbers:", common_numbers)
+print("\n(ii) Unique numbers:", unique_numbers)
+print("\n(iii) Minimum in List 1:", min_list1)
+print("    Minimum in List 2:", min_list2)
+print("\n(iv) Maximum in List 1:", max_list1)
+print("    Maximum in List 2:", max_list2)
+print("\n(v) Sum of List 1:", sum_list1)
+print("    Sum of List 2:", sum_list2)
