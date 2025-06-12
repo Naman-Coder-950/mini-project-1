@@ -259,3 +259,96 @@ with open("random_strings.txt", "w") as file:
 
 print("100 random strings have been written to 'random_strings.txt'")
 
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+# Find primes between 600 and 800
+primes = [str(num) for num in range(600, 801) if is_prime(num)]
+
+# Write to file
+with open("prime_numbers_600_to_800.txt", "w") as file:
+    file.write("\n".join(primes))
+
+print("Prime numbers written to 'prime_numbers_600_to_800.txt'")
+
+import time
+
+# Record the start time
+start_time = time.time()
+
+# Code block whose execution time you want to measure
+# For example, let's calculate the sum of numbers from 1 to 1 million
+total = 0
+for i in range(1, 1000001):
+    total += i
+
+# Record the end time
+end_time = time.time()
+
+# Calculate the elapsed time
+elapsed_time = end_time - start_time
+
+print(f"Time taken by the program: {elapsed_time} seconds")
+
+import time
+import random
+import matplotlib.pyplot as plt
+
+# Sizes of the lists
+sizes = [5000, 10000, 15000, 20000, 25000]
+times = []
+
+for size in sizes:
+    # Generate a random list of 'size' elements
+    lst = [random.randint(1, 1000000) for _ in range(size)]
+    
+    # Record start time
+    start_time = time.time()
+    
+    # Sort the list
+    lst.sort()
+    
+    # Record end time
+    end_time = time.time()
+    
+    # Calculate time taken and append to times list
+    elapsed = end_time - start_time
+    times.append(elapsed)
+    print(f"Sorted list of {size} elements in {elapsed:.6f} seconds.")
+
+# Plotting the results
+plt.figure(figsize=(10, 6))
+plt.plot(sizes, times, marker='o', linestyle='-', color='b')
+plt.title("Time taken to sort lists of different sizes")
+plt.xlabel("Number of elements in list")
+plt.ylabel("Time taken (seconds)")
+plt.grid(True)
+plt.show()
+
+# Sample dictionary of students and their marks in 5 subjects
+student_marks = {
+    'Alice': [85, 92, 78, 90, 88],
+    'Bob': [70, 75, 80, 65, 68],
+    'Charlie': [95, 98, 100, 92, 94],
+    'David': [60, 65, 58, 55, 62],
+    'Eva': [88, 85, 90, 87, 91]
+}
+
+# Calculate average marks for each student
+averages = {student: sum(marks) / len(marks) for student, marks in student_marks.items()}
+
+# Find student with maximum average marks
+max_student = max(averages, key=averages.get)
+max_avg = averages[max_student]
+
+# Find student with minimum average marks
+min_student = min(averages, key=averages.get)
+min_avg = averages[min_student]
+
+print(f"Student with maximum average marks: {max_student} ({max_avg:.2f})")
+print(f"Student with minimum average marks: {min_student} ({min_avg:.2f})")
