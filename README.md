@@ -69,3 +69,8 @@ Q10. Write to the file all prime numbers between 600 and 800.
 Q11. WAP to calculate the time taken by a program. 
 
 Q12. WAP to sort following number of elements in a list, calculate time taken and plot the graph. 
+![image](https://github.com/user-attachments/assets/6c595f3d-e8b8-47b1-8160-fd9a5ca75be8)
+
+Q13. WAP to create a dictionary of student marks in five subjects and you have to find the student  
+having maximum and minimum average marks. 
+
