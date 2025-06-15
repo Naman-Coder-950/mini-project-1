@@ -67,3 +67,5 @@ Q9. Write to the file 100 random strings whose length between 10 and 15.
 Q10. Write to the file all prime numbers between 600 and 800. 
 
 Q11. WAP to calculate the time taken by a program. 
+
+Q12. WAP to sort following number of elements in a list, calculate time taken and plot the graph. 
